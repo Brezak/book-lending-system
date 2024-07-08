@@ -45,7 +45,6 @@ internal class Program
             var services = scope.ServiceProvider;
 
             var context = services.GetRequiredService<BookLendingDb>();
-            context.Database.Migrate();
         }
 
         app.MapPost("/lend_book", async (int book_id, BookLendingDb db) =>
